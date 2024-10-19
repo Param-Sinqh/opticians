@@ -20,7 +20,8 @@
 <body>
   <div class="container">
     <div class="d-flex justify-content-start align-items-center" style="height: 100vh;">
-      <div class="col-md-6 text-center m-0">
+      <div class="position-relative col-md-6 text-center m-0">
+        <h1 class="position-absolute" style="right: 0; left: 0; top: -100px;">Welcome to Opticians</h1>
         <h1>LOGIN</h1>
 
         <?php

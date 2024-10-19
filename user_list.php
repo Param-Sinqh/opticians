@@ -41,7 +41,7 @@ if ($_SESSION['auth'] != 1) {
                 ?>
                 <div class="search-sort-container">
 
-                    <input type="text" class="form-control" placeholder="Search Existing Customers" name="allCust_sw"
+                    <input type="search" class="form-control" placeholder="Search Existing Customers" name="allCust_sw"
                         id="searchInput" required autocomplete="off">
 
                     <div class="sort-container">
@@ -54,14 +54,13 @@ if ($_SESSION['auth'] != 1) {
                                 <a href="#" onclick="setSortOption('Date updated')">Date updated</a>
                             </div>
                         </div>
-                        <a id="rotateIcon" class="rotate0 ri-arrow-up-s-line text-decoration-none text-dark" href="#" onclick="toggleRotation()"></a>
+                        <a id="rotateIcon" class="rotate0 ri-arrow-up-s-line text-decoration-none text-dark" href="#"
+                            onclick="toggleRotation()"></a>
 
                     </div>
                 </div>
-                <div style="overflow-y: overlay; max-height: 70dvh;">
-                    <table id="searchResults" class="table table-hover">
-                        <!-- This table will be updated dynamically with search results -->
-                    </table>
+                <div id="searchResults" class="text-center" style="overflow-y: overlay; max-height: 70dvh;">
+                    <!-- This table will be updated dynamically with search results -->
                 </div>
             </div>
 

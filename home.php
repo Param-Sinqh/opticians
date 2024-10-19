@@ -15,6 +15,7 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/global.css">
 	<link rel="stylesheet" href="assets/css/gopher.css">
+	<link rel="stylesheet" href="assets/css/responsive_table.css">
 
 	<!--=============== Remixicon.css ===============-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
@@ -57,12 +58,10 @@ if ($_SESSION['auth'] != 1) {
 
 		<div class="d-flex justify-content-center align-items-center">
 			<div class="col-md-12 lf m-0">
-				<input type="search" class="form-control" placeholder="Search Existing Customers" name="sw"
+				<input type="search" class="form-control" placeholder="Search by Name, Address, OR Phone" name="sw"
 					id="searchInput" autocomplete="off">
-				<div style="overflow-y: overlay; max-height: 45dvh;">
-					<table id="searchResults" class="table table-hover">
-						<!-- This table will be updated dynamically with search results -->
-					</table>
+				<div id="searchResults" class="text-center" style="overflow-y: overlay; max-height: 45dvh;">
+					<!-- This will be updated dynamically with search results -->
 				</div>
 			</div>
 

@@ -33,7 +33,7 @@ if ($_SESSION['auth'] != 1) {
 
 		<div class="d-flex justify-content-center align-items-center">
 			<div class="col-md-8 lf m-0">
-				<input type="text" class="form-control" placeholder="Search Existing Businesses" name="sw"
+				<input type="search" class="form-control" placeholder="Search Existing Businesses" name="sw"
 					id="searchInput" autocomplete="off">
 				<div style="overflow-y: overlay; max-height: 45dvh;">
 					<table id="searchResults" class="table table-hover">

@@ -15,6 +15,11 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="stylesheet" href="assets/css/global.css">
 	<!--=============== Remixicon.css ===============-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+	<style>
+		body {
+			background-position: left;
+		}
+	</style>
 
 </head>
 
@@ -35,7 +40,7 @@ if ($_SESSION['auth'] != 1) {
 	</div>
 
 	<div class="container">
-		<div class="row">
+		<div class="row p-4">
 			<div class="col-md-6">
 				<h5>About</h5>
 				<p>An ecommerce website, also known as an electronic commerce website, is a digital platform that
@@ -69,7 +74,8 @@ if ($_SESSION['auth'] != 1) {
 				<p>Phone: <a href="tel:+919464879699">+91 94648-79699</a></p>
 				<br>
 				<h5>Follow Us</h5>
-				<a class="social-btn" href="#"><img src="assets/icons/whatsapp.svg" alt="whatsapp"></a>
+				<a class="social-btn" href="https://wa.me/+919464879699."><img src="assets/icons/whatsapp.svg"
+						alt="whatsapp"></a>
 				<a class="social-btn" href="https://linkedin.com/company/erasoftindia">
 					<img src="assets/icons/linkedin.svg" alt="linkedin">
 				</a>
