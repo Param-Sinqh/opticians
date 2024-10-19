@@ -63,39 +63,36 @@ if ($_SESSION['auth'] != 1) {
 			</div>
 			<figure style="position: relative">
 
+				<!----------------------------------------------------- Gopher eye follow  -->
 				<div class="gopher-proximity"></div>
-
-				<!-- Gopher eye follow  -->
 				<div class="gopher" style="transform: scale(0.55); transform-origin: top left;">
-
-					<img id="anchor" src="assets/Gopher_eye_follow\gopher.png" alt="gopher">
+					<img id="anchor" src="assets/Gopher_eye_follow/gopher.png" alt="gopher">
 					<div id="eyes">
-						<img id="eye_L" class="eye" src="assets/Gopher_eye_follow\eye_L.svg" alt="eye"
+						<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye"
 							style="top: -47px; left: -12px; ">
-						<img id="eye_R" class="eye" src="assets/Gopher_eye_follow\eye_R.svg" alt="eye"
+						<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye"
 							style="top: -39px; left: -62px; ">
 					</div>
-
 				</div>
+				<!--------------------------------------------------------------------------->
 
-				<div class="lf" style="z-index: 1;">
+			<div class="lf" style="z-index: 1;">
 
-					<div class="col-md-12 col-md-offset-2 text-center">
+				<div class="col-md-12 col-md-offset-2 text-center">
 
-						<div class="d-flex justify-content-between">
-							<div>
-								<button id="editButton" class="btn edit"></button>
-								<button id="saveButton" class="btn save" style="display: none"></button>
-							</div>
-							<div>
-								<button id="deleteButton" class="btn delete"
-									onclick="return confirm('Are you sure you want to delete?');"
-									href="backend/del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"></button>
-								<button id="cancelButton" class="btn cancel" style="display: none"></button>
-							</div>
+					<div class="d-flex justify-content-between">
+						<div>
+							<button id="editButton" class="btn edit"></button>
+							<button id="saveButton" class="btn save" style="display: none"></button>
 						</div>
+						<div>
+							<button id="deleteButton" class="btn delete"
+								onclick="if(confirm('Are you sure you want to delete?')){window.location.href = 'backend/del_cust.php?cust_id=<?php echo $cust_id; ?>';}"></button>
+							<button id="cancelButton" class="btn cancel" style="display: none"></button>
+						</div>
+					</div>
 
-						<!-- ________________________________________________________________________________Distant Vision -->
+					<!-- ________________________________________________________________________________Distant Vision -->
 						<h4 style="display: inline-block; margin: 10px;">Distant Vision</h4>
 						<table id="tbv" class="table">
 							<thead>
@@ -152,15 +149,13 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="#">Visual acuity (VA)</td>
-									<td class="editable" colspan="5"
-										data-column-name="dv_va">
+									<td class="editable" colspan="5" data-column-name="dv_va">
 										<?php echo ($row['dv_va'] == null) ? '-' : $row['dv_va']; ?>
 									</td>
 								</tr>
 								<tr>
 									<td data-label="#">Pupil Distance (PD)</td>
-									<td class="editable" colspan="5"
-										data-column-name="dv_pd">
+									<td class="editable" colspan="5" data-column-name="dv_pd">
 										<?php echo ($row['dv_pd'] == null) ? '-' : $row['dv_pd']; ?>
 									</td>
 								</tr>
@@ -226,15 +221,13 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="#">Visual acuity (VA)</td>
-									<td class="editable" colspan="5"
-										data-column-name="nv_va">
+									<td class="editable" colspan="5" data-column-name="nv_va">
 										<?php echo ($row['nv_va'] == null) ? '-' : $row['nv_va']; ?>
 									</td>
 								</tr>
 								<tr>
 									<td data-label="#">Pupil Distance (PD)</td>
-									<td class="editable" colspan="5"
-										data-column-name="nv_pd">
+									<td class="editable" colspan="5" data-column-name="nv_pd">
 										<?php echo ($row['nv_pd'] == null) ? '-' : $row['nv_pd']; ?>
 									</td>
 								</tr>
@@ -269,43 +262,41 @@ if ($_SESSION['auth'] != 1) {
 	<!-- Footer with details -->
 	<footer class="footer" style="margin-top: 100px;">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h4>An optician typically requires several values or measurements to create a prescription for
+			<div class="col-md-12">
+				<!-- <h4>An optician typically requires several values or measurements to create a prescription for
 						eyeglasses or contact lenses. These values are obtained through an eye examination conducted by
 						an
-						optometrist or ophthalmologist. Some of the common values or measurements include:</h4>
-					<ul>
-						<li><strong>Sphere (Sph):</strong> This indicates the lens power needed to correct
-							nearsightedness
-							(myopia) or farsightedness (hyperopia). It is measured in diopters (D).</li>
-						<li><strong>Cylinder (Cyl):</strong> This indicates the amount of astigmatism present in the
-							eye. It
-							represents the difference in power between two principal meridians of the eye. It is also
-							measured in diopters (D).</li>
-						<li><strong>Axis:</strong> This indicates the orientation of the cylinder power in degrees. It
-							ranges from 0 to 180 degrees.</li>
-						<li><strong>Addition (Add):</strong> This is the additional magnifying power needed for reading
-							or
-							close work in bifocal or progressive lenses. It is typically used for presbyopia correction.
-						</li>
-						<li><strong>Pupil Distance (PD):</strong> This is the distance between the centers of the pupils
-							of
-							the eyes. It is essential for ensuring proper alignment of the lenses.</li>
-						<li><strong>Base Curve (BC):</strong> This is a measurement for contact lenses and refers to the
-							curvature of the lens. It affects the fit and comfort of the lenses.</li>
-						<li><strong>Diameter (DIA):</strong> This is also for contact lenses and represents the size of
-							the
-							lens. It ensures proper coverage of the cornea.</li>
-						<li><strong>Prism:</strong> In some cases, prism correction may be needed for eye misalignment
-							issues such as double vision (diplopia).</li>
-					</ul>
-					<p>These are some of the primary values required for creating prescription eyewear. The specific
-						values
-						needed may vary based on the individual's prescription and any particular requirements for their
-						lenses. It's essential to have a comprehensive eye examination conducted by a qualified eye care
-						professional to obtain accurate measurements.</p>
-				</div>
+						optometrist or ophthalmologist. Some of the common values or measurements include:</h4> -->
+				<ul>
+					<li><strong>Sphere (Sph):</strong> This indicates the lens power needed to correct
+						nearsightedness
+						(myopia) or farsightedness (hyperopia). It is measured in diopters (D).</li>
+					<li><strong>Cylinder (Cyl):</strong> This indicates the amount of astigmatism present in the
+						eye. It
+						represents the difference in power between two principal meridians of the eye. It is also
+						measured in diopters (D).</li>
+					<li><strong>Axis:</strong> This indicates the orientation of the cylinder power in degrees. It
+						ranges from 0 to 180 degrees.</li>
+					<li><strong>Addition (Add):</strong> This is the additional magnifying power needed for reading
+						or
+						close work in bifocal or progressive lenses. It is typically used for presbyopia correction.
+					</li>
+					<li><strong>Pupil Distance (PD):</strong> This is the distance between the centers of the pupils
+						of
+						the eyes. It is essential for ensuring proper alignment of the lenses.</li>
+					<li><strong>Base Curve (BC):</strong> This is a measurement for contact lenses and refers to the
+						curvature of the lens. It affects the fit and comfort of the lenses.</li>
+					<li><strong>Diameter (DIA):</strong> This is also for contact lenses and represents the size of
+						the
+						lens. It ensures proper coverage of the cornea.</li>
+					<li><strong>Prism:</strong> In some cases, prism correction may be needed for eye misalignment
+						issues such as double vision (diplopia).</li>
+				</ul>
+				<p>These are some of the primary values required for creating prescription eyewear. The specific
+					values
+					needed may vary based on the individual's prescription and any particular requirements for their
+					lenses. It's essential to have a comprehensive eye examination conducted by a qualified eye care
+					professional to obtain accurate measurements.</p>
 			</div>
 		</div>
 	</footer>

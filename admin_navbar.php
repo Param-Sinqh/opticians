@@ -1,3 +1,10 @@
+<style>
+	body {
+		background-image: url("assets/images/reading-glasses-desktop.avif");
+		background-position: center;
+	}
+</style>
+
 <nav style="box-shadow: 0 2px 10px lightgray;" class="navbar navbar-expand-md navbar-light bg-white fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="admin_home.php">

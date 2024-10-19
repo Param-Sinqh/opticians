@@ -12,5 +12,5 @@
 	
 	$sql="delete from $tb_cust where cust_id='$cust_id'";
 	$res=$con->query($sql);
-	header("Location: ../nc.php");
+	header("Location: ../user_list.php");
 ?>

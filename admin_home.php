@@ -13,13 +13,7 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
 	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/global.css">
-	<style>
-		body {
-			background-color: purple;
-			background-blend-mode: hard-light;
-		}
-	</style>
-
+	
 </head>
 
 <body>
@@ -39,7 +33,7 @@ if ($_SESSION['auth'] != 1) {
 
 		<div class="d-flex justify-content-center align-items-center">
 			<div class="col-md-8 lf m-0">
-				<input type="text" class="form-control" placeholder="Search Existing Customers" name="sw"
+				<input type="text" class="form-control" placeholder="Search Existing Businesses" name="sw"
 					id="searchInput" autocomplete="off">
 				<div style="overflow-y: overlay; max-height: 45dvh;">
 					<table id="searchResults" class="table table-hover">

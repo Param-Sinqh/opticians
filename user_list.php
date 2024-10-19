@@ -18,6 +18,10 @@ if ($_SESSION['auth'] != 1) {
     <link rel="stylesheet" href="assets/css/user_list.css">
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/responsive_table.css">
+
+    <!--=============== Remixicon.css ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+
 </head>
 
 <body>
@@ -27,8 +31,8 @@ if ($_SESSION['auth'] != 1) {
 
     <div class="container">
         <br><br><br>
-        <div class="d-flex justify-content-center align-items-center" style="margin: 0">
-            <div class="col-md-8 lf">
+        <div class="d-flex justify-content-center align-items-center m-0">
+            <div class="col-md-12 lf">
                 <?php
                 if (isset($_GET['msg'])) {
                     echo "<div id='alert' class='alert alert-danger'>No User Found</div>";
@@ -50,9 +54,7 @@ if ($_SESSION['auth'] != 1) {
                                 <a href="#" onclick="setSortOption('Date updated')">Date updated</a>
                             </div>
                         </div>
-                        <a id="rotateIcon" href="#" onclick="toggleRotation()"><img src="assets/icons/Arrow - Up 2.svg"
-                                class="rotate0" id="iconImage" />
-                        </a>
+                        <a id="rotateIcon" class="rotate0 ri-arrow-up-s-line text-decoration-none text-dark" href="#" onclick="toggleRotation()"></a>
 
                     </div>
                 </div>
@@ -72,8 +74,7 @@ if ($_SESSION['auth'] != 1) {
         let sortOption = 'Name'; // Initial sort option
 
         function toggleRotation() {
-            const icon = document.getElementById('iconImage');
-            const rotateIcon = document.getElementById('rotateIcon');
+            const icon = document.getElementById('rotateIcon');
 
             // Toggle the rotated variable
             rotated = !rotated;

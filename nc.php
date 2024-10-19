@@ -80,12 +80,11 @@ if ($_SESSION['auth'] != 1) {
 							<tbody>
 								<tr>
 									<td data-label="#">Right (OD)</td>
-									<td data-label="Sph"><input type="text" name="dv_right_sph"
-											class="form-control" required></td>
-									<td data-label="Cyl"><input type="text" name="dv_right_cyl"
-											class="form-control" required></td>
-									<td data-label="Axis"><input type="text" name="dv_right_axis" class="form-control"
-											required>
+									<td data-label="Sph"><input type="text" name="dv_right_sph" class="form-control">
+									</td>
+									<td data-label="Cyl"><input type="text" name="dv_right_cyl" class="form-control">
+									</td>
+									<td data-label="Axis"><input type="text" name="dv_right_axis" class="form-control">
 									</td>
 									<td data-label="Prism"><input type="text" name="dv_right_prism"
 											class="form-control">
@@ -96,12 +95,11 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="#">Left (OS)</td>
-									<td data-label="Sph"><input type="text" name="dv_left_sph"
-											class="form-control" required></td>
-									<td data-label="Cyl"><input type="text" name="dv_left_cyl"
-											class="form-control" required></td>
-									<td data-label="Axis"><input type="text" name="dv_left_axis" class="form-control"
-											required>
+									<td data-label="Sph"><input type="text" name="dv_left_sph" class="form-control">
+									</td>
+									<td data-label="Cyl"><input type="text" name="dv_left_cyl" class="form-control">
+									</td>
+									<td data-label="Axis"><input type="text" name="dv_left_axis" class="form-control">
 									</td>
 									<td data-label="Prism"><input type="text" name="dv_left_prism" class="form-control">
 									</td>
@@ -111,12 +109,12 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="VA">Visual acuity (VA)</td>
-									<td colspan="5"><input type="text" name="dv_va" class="form-control" required></td>
+									<td colspan="5"><input type="text" name="dv_va" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="PD">Pupil Distance (PD)</td>
-									<td colspan="5"><input type="text" name="dv_pd" class="form-control" required></td>
+									<td colspan="5"><input type="text" name="dv_pd" class="form-control"></td>
 								</tr>
 							</tbody>
 
@@ -143,12 +141,11 @@ if ($_SESSION['auth'] != 1) {
 							<tbody>
 								<tr>
 									<td data-label="#">Right (OD)</td>
-									<td data-label="Sph"><input type="text" name="nv_right_sph"
-											class="form-control" required></td>
-									<td data-label="Cyl"><input type="text" name="nv_right_cyl"
-											class="form-control" required></td>
-									<td data-label="Axis"><input type="text" name="nv_right_axis" class="form-control"
-											required>
+									<td data-label="Sph"><input type="text" name="nv_right_sph" class="form-control">
+									</td>
+									<td data-label="Cyl"><input type="text" name="nv_right_cyl" class="form-control">
+									</td>
+									<td data-label="Axis"><input type="text" name="nv_right_axis" class="form-control">
 									</td>
 									<td data-label="Prism"><input type="text" name="nv_right_prism"
 											class="form-control">
@@ -159,12 +156,11 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="#">Left (OS)</td>
-									<td data-label="Sph"><input type="text" name="nv_left_sph"
-											class="form-control" required></td>
-									<td data-label="Cyl"><input type="text" name="nv_left_cyl"
-											class="form-control" required></td>
-									<td data-label="Axis"><input type="text" name="nv_left_axis" class="form-control"
-											required>
+									<td data-label="Sph"><input type="text" name="nv_left_sph" class="form-control">
+									</td>
+									<td data-label="Cyl"><input type="text" name="nv_left_cyl" class="form-control">
+									</td>
+									<td data-label="Axis"><input type="text" name="nv_left_axis" class="form-control">
 									</td>
 									<td data-label="Prism"><input type="text" name="nv_left_prism" class="form-control">
 									</td>
@@ -174,12 +170,12 @@ if ($_SESSION['auth'] != 1) {
 
 								<tr>
 									<td data-label="VA">Visual acuity (VA)</td>
-									<td colspan="5"><input type="text" name="nv_va" class="form-control" required></td>
+									<td colspan="5"><input type="text" name="nv_va" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="PD">Pupil Distance (PD)</td>
-									<td colspan="5"><input type="text" name="nv_pd" class="form-control" required></td>
+									<td colspan="5"><input type="text" name="nv_pd" class="form-control"></td>
 								</tr>
 							</tbody>
 
@@ -194,11 +190,11 @@ if ($_SESSION['auth'] != 1) {
 						<table id="tbv" class="table">
 							<tr>
 								<td data-label="BC">Base Curve (BC)</td>
-								<td><input type="text" name="bc" class="form-control" required></td>
+								<td><input type="text" name="bc" class="form-control"></td>
 							</tr>
 							<tr>
 								<td data-label="DIA">Diameter (DIA)</td>
-								<td><input type="text" name="dia" class="form-control" required></td>
+								<td><input type="text" name="dia" class="form-control"></td>
 							</tr>
 						</table>
 					</div>
@@ -235,7 +231,7 @@ if ($_SESSION['auth'] != 1) {
 						<?php
 						while ($row = $res->fetch_assoc()) {
 							?>
-							<tr >
+							<tr>
 								<td data-label="Name">
 									<?php echo $row['cname']; ?>
 								</td>
@@ -248,7 +244,7 @@ if ($_SESSION['auth'] != 1) {
 								<td data-label="Edit"><a href="edit_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img
 											src="assets/icons/Edit_Square_stroke.svg" /></a></td>
 								<td data-label="Delete"><a onclick="return confirm('Are you sure you want to delete?'); "
-										href="del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img
+										href="backend/del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img
 											src="assets/icons/Delete_stroke.svg" /></a></td>
 							</tr>
 							<?php

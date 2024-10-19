@@ -14,6 +14,8 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
 	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/gopher.css">
+
 	<!--=============== Remixicon.css ===============-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
 
@@ -36,10 +38,26 @@ if ($_SESSION['auth'] != 1) {
 
 	</div>
 
-	<div class="container">
+
+
+	<div class="container position-relative">
+
+		<!----------------------------------------------------- Gopher eye follow  -->
+		<div class="gopher-proximity"></div>
+		<div class="gopher" style="transform: scale(0.55); transform-origin: top left;">
+			<img id="anchor" src="assets/Gopher_eye_follow/gopher.png" alt="gopher">
+			<div id="eyes">
+				<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye"
+					style="top: -47px; left: -12px; ">
+				<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye"
+					style="top: -39px; left: -62px; ">
+			</div>
+		</div>
+		<!--------------------------------------------------------------------------->
+
 		<div class="d-flex justify-content-center align-items-center">
-			<div class="col-md-8 lf m-0">
-				<input type="text" class="form-control" placeholder="Search Existing Customers" name="sw"
+			<div class="col-md-12 lf m-0">
+				<input type="search" class="form-control" placeholder="Search Existing Customers" name="sw"
 					id="searchInput" autocomplete="off">
 				<div style="overflow-y: overlay; max-height: 45dvh;">
 					<table id="searchResults" class="table table-hover">
@@ -68,6 +86,7 @@ if ($_SESSION['auth'] != 1) {
 		});
 	</script>
 
+	<script src="assets/Gopher_eye_follow/gopher.js"></script>
 	<script src="assets/vender/jquery-3.7.1.slim.min.js"></script>
 	<script src="assets/vender/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
 </body>

@@ -13,6 +13,8 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
 	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/responsive_table.css">
+
 	<style>
 		#tbv td {
 			border: solid 2px #008ad3;
@@ -59,7 +61,7 @@ if ($_SESSION['auth'] != 1) {
 							</div>
 							<div>
 								<br>
-								<input type="submit" class="btn btn-success btn-block" value="Register" />
+								<input type="submit" class="btn btn-secondary btn-block" value="Register" />
 								<br />
 							</div>
 						</div>
@@ -80,6 +82,8 @@ if ($_SESSION['auth'] != 1) {
 							<th>ID</th>
 							<th>Company</th>
 							<th>Username</th>
+							<th>Phone</th>
+							<th>Address</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -87,16 +91,11 @@ if ($_SESSION['auth'] != 1) {
 						while ($row = $res->fetch_assoc()) {
 							?>
 							<tr>
-								<td>
-									<?php echo $row['id']; ?>
-								</td>
-								<td>
-									<?php echo $row['comp_name']; ?>
-								</td>
-								<td>
-									<?php echo $row['un']; ?>
-								</td>
-
+								<td data-label="ID"><?php echo $row['id']; ?></td>
+								<td data-label="Company"><?php echo $row['comp_name']; ?></td>
+								<td data-label="Username"><?php echo $row['un']; ?></td>
+								<td data-label="Phone"><?php echo $row['phone']; ?></td>
+								<td data-label="Address"><?php echo $row['address']; ?></td>
 							</tr>
 							<?php
 						}
