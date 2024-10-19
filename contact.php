@@ -1,105 +1,21 @@
 <?php
 session_start();
 if ($_SESSION['auth'] != 1) {
-	header("Location: index.php");
+	header("Location: index.php?session_expired=1");
 }
 ?>
 <html lang="en">
 
 <head>
-	<title>OPTICIANS</title>
+	<title>Contact</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<style>
-		body {
-			background: url('https://images.unsplash.com/photo-1577400983943-874919eca6ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-			background-size: cover;
-			font-family: Arial, sans-serif;
-		}
+	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
+	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/global.css">
+	<!--=============== Remixicon.css ===============-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
 
-		.lf {
-			background: rgba(255, 255, 255, 0.8);
-			padding: 30px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-			backdrop-filter: blur(5px);
-		}
-
-		.lf h1 {
-			font-size: 28px;
-			color: #333;
-			text-align: center;
-			margin-bottom: 30px;
-		}
-
-		.lf input[type="text"],
-		.lf input[type="password"] {
-			width: 100%;
-			padding: 10px;
-			margin-bottom: 20px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			outline: none;
-		}
-
-		.lf input[type="submit"] {
-			width: 100%;
-			padding: 10px;
-			border: none;
-			border-radius: 5px;
-			background-color: #008ad3;
-			color: #fff;
-			font-size: 16px;
-			cursor: pointer;
-		}
-
-		.lf input[type="submit"]:hover {
-			background-color: #00578a;
-		}
-
-		.alert {
-			margin-top: 20px;
-		}
-
-		/* Custom CSS for the FAB */
-		.fab-container {
-			box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-			background: rgba(255, 255, 255, 0.8);
-			border-radius: 10px;
-			backdrop-filter: blur(5px);
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			z-index: 1000;
-			/* Ensure it's above other elements */
-		}
-
-		.fab-container :hover {
-			box-shadow: 0px 0px 10px 5px white;
-			border-radius: 10px;
-			background-color: #f4d2c4;
-		}
-
-		.footer {
-			background: rgba(255, 255, 255, 0.8);
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-			box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-			backdrop-filter: blur(5px);
-
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			color: black;
-			text-align: center;
-			padding: 20px 0;
-		}
-
-		.footer a {
-			color: black;
-		}
-	</style>
 </head>
 
 <body>
@@ -148,25 +64,22 @@ if ($_SESSION['auth'] != 1) {
 			<div class="col-md-6">
 				<h5>Contact</h5>
 
-				<p>Website: <a href="http://erasoftindia.com">erasoftindia.com</a></p>
+				<p>Website: <a href="https://erasoftindia.com">erasoftindia.com</a></p>
 				<p>Email: <a href="mailto:erasoftindiadev@gmail.com">erasoftindiadev@gmail.com</a></p>
 				<p>Phone: <a href="tel:+919464879699">+91 94648-79699</a></p>
 				<br>
 				<h5>Follow Us</h5>
-				<a href="#"><i class="fab fa-facebook-f"></i><img src='icons\facebook.svg' /></a>
-				<a href="#"><i class="fab fa-whatsapp"></i><img src='icons\whatsapp.svg' /></a>
-				<a href="#"><i class="fab fa-instagram"></i><img src='icons\instagram.svg' /></a>
-				<a href="#"><i class="fab fa-linkedin"></i><img src='icons\linkedin.svg' /></a>
+				<a class="social-btn" href="#"><img src="assets/icons/whatsapp.svg" alt="whatsapp"></a>
+				<a class="social-btn" href="https://linkedin.com/company/erasoftindia">
+					<img src="assets/icons/linkedin.svg" alt="linkedin">
+				</a>
 
 			</div>
 		</div>
 	</div>
 
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="assets/vender/jquery-3.7.1.slim.min.js"></script>
+	<script src="assets/vender/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

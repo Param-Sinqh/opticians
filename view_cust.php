@@ -2,18 +2,23 @@
 
 session_start();
 if ($_SESSION['auth'] != 1) {
-	header("Location: index.php");
+	header("Location: index.php?session_expired=1");
 }
 ?>
 
 <html lang="en">
 
 <head>
-	<title>OPTICIANS</title>
+	<title>Customer Details</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/view_cust.css">
+	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
+	<link rel="stylesheet" href="assets/vender/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/view_cust.css">
+	<link rel="stylesheet" href="assets/css/gopher.css">
+	<link rel="stylesheet" href="assets/css/responsive_table.css">
+
 </head>
 
 <body>
@@ -27,7 +32,7 @@ if ($_SESSION['auth'] != 1) {
 		<br /><br /><br />
 
 		<?php
-		include("confile.php");
+		include("config/confile.php");
 
 		$tb_cust = $_SESSION['tb_cust'];
 		$cust_id = $con->real_escape_string($_GET['cust_id']);
@@ -40,8 +45,8 @@ if ($_SESSION['auth'] != 1) {
 			$_SESSION['cust_id'] = $row['cust_id'];
 			?>
 
-			<div class="row lf">
-				<div class="col-md-12 col-md-offset-2" style="text-align: left;">
+			<div class="lf">
+				<div class="col-md-12 col-md-offset-2 text-start">
 					<h1 style="text-align: left; margin-bottom: 0px">
 						<?php echo $row['cname']; ?>
 					</h1>
@@ -56,182 +61,198 @@ if ($_SESSION['auth'] != 1) {
 
 				</div>
 			</div>
-			<figure style="position: relative" >
-			
+			<figure style="position: relative">
+
 				<div class="gopher-proximity"></div>
 
 				<!-- Gopher eye follow  -->
 				<div class="gopher" style="transform: scale(0.55); transform-origin: top left;">
 
-					<img id="anchor" src="Gopher_eye_follow\gopher.png" alt="gopher">
+					<img id="anchor" src="assets/Gopher_eye_follow\gopher.png" alt="gopher">
 					<div id="eyes">
-						<img id="eye_L" class="eye" src="Gopher_eye_follow\eye_L.svg" alt="eye"
+						<img id="eye_L" class="eye" src="assets/Gopher_eye_follow\eye_L.svg" alt="eye"
 							style="top: -47px; left: -12px; ">
-						<img id="eye_R" class="eye" src="Gopher_eye_follow\eye_R.svg" alt="eye"
+						<img id="eye_R" class="eye" src="assets/Gopher_eye_follow\eye_R.svg" alt="eye"
 							style="top: -39px; left: -62px; ">
 					</div>
 
 				</div>
 
-				<div class="row lf" style="z-index: 1;">
+				<div class="lf" style="z-index: 1;">
 
-					<div class="col-md-12 col-md-offset-2" style="text-align: center;">
+					<div class="col-md-12 col-md-offset-2 text-center">
 
-						<div style="display: flex; justify-content: space-between;">
+						<div class="d-flex justify-content-between">
 							<div>
 								<button id="editButton" class="btn edit"></button>
 								<button id="saveButton" class="btn save" style="display: none"></button>
 							</div>
 							<div>
-								<button id="deleteButton" class="btn delete" onclick="return sureDel();"
-									href="del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"></button>
+								<button id="deleteButton" class="btn delete"
+									onclick="return confirm('Are you sure you want to delete?');"
+									href="backend/del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"></button>
 								<button id="cancelButton" class="btn cancel" style="display: none"></button>
 							</div>
 						</div>
 
 						<!-- ________________________________________________________________________________Distant Vision -->
-						<b style="display: inline-block; margin: 10px;">Distant Vision</b>
+						<h4 style="display: inline-block; margin: 10px;">Distant Vision</h4>
 						<table id="tbv" class="table">
-							<tr>
-								<td>#</td>
-								<td>Sphere (Sph)</td>
-								<td>Cylinder (Cyl)</td>
-								<td>Axis</td>
-								<td>Prism</td>
-								<td>Add</td>
-							</tr>
+							<thead>
+								<tr>
+									<td>#</td>
+									<td>Sphere (Sph)</td>
+									<td>Cylinder (Cyl)</td>
+									<td>Axis</td>
+									<td>Prism</td>
+									<td>Add</td>
+								</tr>
+							</thead>
 
-							<tr>
-								<td>Right (OD)</td>
-								<td class="editable" data-column-name="dv_right_sph">
-									<?php echo $row['dv_right_sph']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_right_cyl">
-									<?php echo $row['dv_right_cyl']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_right_axis">
-									<?php echo $row['dv_right_axis']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_right_prism">
-									<?php echo ($row['dv_right_prism'] == null) ? '-' : $row['dv_right_prism']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_right_add">
-									<?php echo ($row['dv_right_add'] == null) ? '-' : $row['dv_right_add']; ?>
-								</td>
-							</tr>
+							<tbody>
+								<tr>
+									<td data-label="#">Right (OD)</td>
+									<td data-label="Sph" class="editable" data-column-name="dv_right_sph">
+										<?php echo $row['dv_right_sph']; ?>
+									</td>
+									<td data-label="Cyl" class="editable" data-column-name="dv_right_cyl">
+										<?php echo $row['dv_right_cyl']; ?>
+									</td>
+									<td data-label="Axis" class="editable" data-column-name="dv_right_axis">
+										<?php echo $row['dv_right_axis']; ?>
+									</td>
+									<td data-label="Prism" class="editable" data-column-name="dv_right_prism">
+										<?php echo ($row['dv_right_prism'] == null) ? '-' : $row['dv_right_prism']; ?>
+									</td>
+									<td data-label="Add" class="editable" data-column-name="dv_right_add">
+										<?php echo ($row['dv_right_add'] == null) ? '-' : $row['dv_right_add']; ?>
+									</td>
+								</tr>
 
-							<tr>
-								<td>Left (OS)</td>
-								<td class="editable" data-column-name="dv_left_sph">
-									<?php echo $row['dv_left_sph']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_left_cyl">
-									<?php echo $row['dv_left_cyl']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_left_axis">
-									<?php echo $row['dv_left_axis']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_left_prism">
-									<?php echo ($row['dv_left_prism'] == null) ? '-' : $row['dv_left_prism']; ?>
-								</td>
-								<td class="editable" data-column-name="dv_left_add">
-									<?php echo ($row['dv_left_add'] == null) ? '-' : $row['dv_left_add']; ?>
-								</td>
-							</tr>
+								<tr>
+									<td data-label="#">Left (OS)</td>
+									<td data-label="Sph" class="editable" data-column-name="dv_left_sph">
+										<?php echo $row['dv_left_sph']; ?>
+									</td>
+									<td data-label="Cyl" class="editable" data-column-name="dv_left_cyl">
+										<?php echo $row['dv_left_cyl']; ?>
+									</td>
+									<td data-label="Axis" class="editable" data-column-name="dv_left_axis">
+										<?php echo $row['dv_left_axis']; ?>
+									</td>
+									<td data-label="Prism" class="editable" data-column-name="dv_left_prism">
+										<?php echo ($row['dv_left_prism'] == null) ? '-' : $row['dv_left_prism']; ?>
+									</td>
+									<td data-label="Add" class="editable" data-column-name="dv_left_add">
+										<?php echo ($row['dv_left_add'] == null) ? '-' : $row['dv_left_add']; ?>
+									</td>
+								</tr>
 
-							<tr class="spacer-row"></tr>
+								<tr class="spacer-row"></tr>
 
-							<tr>
-								<td>Visual acuity (VA)</td>
-								<td class="editable" colspan="5" data-column-name="dv_va">
-									<?php echo ($row['dv_va'] == null) ? '-' : $row['dv_va']; ?>
-								</td>
-							</tr>
-							<tr>
-								<td>Pupil Distance (PD)</td>
-								<td class="editable" colspan="5" data-column-name="dv_pd">
-									<?php echo ($row['dv_pd'] == null) ? '-' : $row['dv_pd']; ?>
-								</td>
-							</tr>
+								<tr>
+									<td data-label="#">Visual acuity (VA)</td>
+									<td class="editable" colspan="5"
+										data-column-name="dv_va">
+										<?php echo ($row['dv_va'] == null) ? '-' : $row['dv_va']; ?>
+									</td>
+								</tr>
+								<tr>
+									<td data-label="#">Pupil Distance (PD)</td>
+									<td class="editable" colspan="5"
+										data-column-name="dv_pd">
+										<?php echo ($row['dv_pd'] == null) ? '-' : $row['dv_pd']; ?>
+									</td>
+								</tr>
+							</tbody>
+
+
 						</table>
 
 						<!-- ________________________________________________________________________________Near Vision -->
-						<b style="display: inline-block; margin: 10px;">Near Vision</b>
+						<h4 style="display: inline-block; margin: 10px;">Near Vision</h4>
 						<table id="tbv" class="table">
-							<tr>
-								<td>#</td>
-								<td>Sphere (Sph)</td>
-								<td>Cylinder (Cyl)</td>
-								<td>Axis</td>
-								<td>Prism</td>
-								<td>Add</td>
-							</tr>
+							<thead>
+								<tr>
+									<td>#</td>
+									<td>Sphere (Sph)</td>
+									<td>Cylinder (Cyl)</td>
+									<td>Axis</td>
+									<td>Prism</td>
+									<td>Add</td>
+								</tr>
+							</thead>
 
-							<tr>
-								<td>Right (OD)</td>
-								<td class="editable" data-column-name="nv_right_sph">
-									<?php echo $row['nv_right_sph']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_right_cyl">
-									<?php echo $row['nv_right_cyl']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_right_axis">
-									<?php echo $row['nv_right_axis']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_right_prism">
-									<?php echo ($row['nv_right_prism'] == null) ? '-' : $row['nv_right_prism']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_right_add">
-									<?php echo ($row['nv_right_add'] == null) ? '-' : $row['nv_right_add']; ?>
-								</td>
-							</tr>
+							<tbody>
+								<tr>
+									<td data-label="#">Right (OD)</td>
+									<td data-label="Sph" class="editable" data-column-name="nv_right_sph">
+										<?php echo $row['nv_right_sph']; ?>
+									</td>
+									<td data-label="Cyl" class="editable" data-column-name="nv_right_cyl">
+										<?php echo $row['nv_right_cyl']; ?>
+									</td>
+									<td data-label="Axis" class="editable" data-column-name="nv_right_axis">
+										<?php echo $row['nv_right_axis']; ?>
+									</td>
+									<td data-label="Prism" class="editable" data-column-name="nv_right_prism">
+										<?php echo ($row['nv_right_prism'] == null) ? '-' : $row['nv_right_prism']; ?>
+									</td>
+									<td data-label="Add" class="editable" data-column-name="nv_right_add">
+										<?php echo ($row['nv_right_add'] == null) ? '-' : $row['nv_right_add']; ?>
+									</td>
+								</tr>
 
-							<tr>
-								<td>Left (OS)</td>
-								<td class="editable" data-column-name="nv_left_sph">
-									<?php echo $row['nv_left_sph']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_left_cyl">
-									<?php echo $row['nv_left_cyl']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_left_axis">
-									<?php echo $row['nv_left_axis']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_left_prism">
-									<?php echo ($row['nv_left_prism'] == null) ? '-' : $row['nv_left_prism']; ?>
-								</td>
-								<td class="editable" data-column-name="nv_left_add">
-									<?php echo ($row['nv_left_add'] == null) ? '-' : $row['nv_left_add']; ?>
-								</td>
-							</tr>
+								<tr>
+									<td data-label="#">Left (OS)</td>
+									<td data-label="Sph" class="editable" data-column-name="nv_left_sph">
+										<?php echo $row['nv_left_sph']; ?>
+									</td>
+									<td data-label="Cyl" class="editable" data-column-name="nv_left_cyl">
+										<?php echo $row['nv_left_cyl']; ?>
+									</td>
+									<td data-label="Axis" class="editable" data-column-name="nv_left_axis">
+										<?php echo $row['nv_left_axis']; ?>
+									</td>
+									<td data-label="Prism" class="editable" data-column-name="nv_left_prism">
+										<?php echo ($row['nv_left_prism'] == null) ? '-' : $row['nv_left_prism']; ?>
+									</td>
+									<td data-label="Add" class="editable" data-column-name="nv_left_add">
+										<?php echo ($row['nv_left_add'] == null) ? '-' : $row['nv_left_add']; ?>
+									</td>
+								</tr>
 
-							<tr class="spacer-row"></tr>
+								<tr class="spacer-row"></tr>
 
-							<tr>
-								<td>Visual acuity (VA)</td>
-								<td class="editable" colspan="5" data-column-name="nv_va">
-									<?php echo ($row['nv_va'] == null) ? '-' : $row['nv_va']; ?>
-								</td>
-							</tr>
-							<tr>
-								<td>Pupil Distance (PD)</td>
-								<td class="editable" colspan="5" data-column-name="nv_pd">
-									<?php echo ($row['nv_pd'] == null) ? '-' : $row['nv_pd']; ?>
-								</td>
-							</tr>
+								<tr>
+									<td data-label="#">Visual acuity (VA)</td>
+									<td class="editable" colspan="5"
+										data-column-name="nv_va">
+										<?php echo ($row['nv_va'] == null) ? '-' : $row['nv_va']; ?>
+									</td>
+								</tr>
+								<tr>
+									<td data-label="#">Pupil Distance (PD)</td>
+									<td class="editable" colspan="5"
+										data-column-name="nv_pd">
+										<?php echo ($row['nv_pd'] == null) ? '-' : $row['nv_pd']; ?>
+									</td>
+								</tr>
+							</tbody>
+
 						</table>
 
 						<!-- ________________________________________________________________________________Additional Values -->
-						<b style="display: inline-block; margin: 10px;">Additional Values</b>
+						<h4 style="display: inline-block; margin: 10px;">Additional Values</h4>
 						<table id="tbv" class="table">
 							<tr>
-								<td>Base Curve (BC)</td>
+								<td data-label="#">Base Curve (BC)</td>
 								<td class="editable" data-column-name="bc">
 									<?php echo ($row['bc'] == null) ? '-' : $row['bc']; ?>
 								</td>
 							</tr>
 							<tr>
-								<td>Diameter (DIA)</td>
+								<td data-label="#">Diameter (DIA)</td>
 								<td class="editable" data-column-name="dia">
 									<?php echo ($row['dia'] == null) ? '-' : $row['dia']; ?>
 								</td>
@@ -246,7 +267,7 @@ if ($_SESSION['auth'] != 1) {
 	</div>
 
 	<!-- Footer with details -->
-	<footer class="footer" style="margin-top: 150px;">
+	<footer class="footer" style="margin-top: 100px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -290,13 +311,11 @@ if ($_SESSION['auth'] != 1) {
 	</footer>
 
 
-	<script src="js/table_cel_event_listeners.js"></script>
-	<script src="Gopher_eye_follow/gopher.js"></script>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="assets/js/table_cel_event_listeners.js"></script>
+	<script src="assets/Gopher_eye_follow/gopher.js"></script>
+
+	<script src="assets/vender/jquery-3.7.1.slim.min.js"></script>
+	<script src="assets/vender/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

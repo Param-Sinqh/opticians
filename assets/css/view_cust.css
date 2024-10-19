@@ -1,0 +1,61 @@
+.btn {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn.edit {
+    background-image: url('../icons/Edit_Square_stroke.svg');
+}
+
+.btn.save {
+    background-image: url('../icons/Tick_Square_stroke.svg');
+}
+
+.btn.cancel {
+    background-image: url('../icons/Cross_Square_stroke.svg');
+}
+
+.btn.delete {
+    background-image: url('../icons/Delete_stroke.svg');
+}
+
+/* Hover effect for specific buttons */
+.btn.edit:hover {
+    background-image: url('../icons/Edit_Square_filled.svg');
+}
+
+.btn.save:hover {
+    background-image: url('../icons/Tick_Square_filled.svg');
+}
+
+.btn.cancel:hover {
+    background-image: url('../icons/Cross_Square_filled.svg');
+}
+
+.btn.delete:hover {
+    background-image: url('../icons/Delete_filled.svg');
+}
+
+@keyframes fade {
+    0% {
+        background-color: #fbd7c7;
+    }
+
+    50% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        background-color: #fbd7c7;
+    }
+}
+
+.editable-active {
+    animation: fade 2s infinite;
+}

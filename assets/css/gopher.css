@@ -1,0 +1,52 @@
+.gopher {
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    min-height: auto;
+    position: absolute;
+    right: 10%;
+    top: -73px;
+    transition: top 0.3s ease;
+}
+
+.gopher-proximity {
+
+    position: absolute;
+    border-radius: 50%;
+    right: 12.5%;
+    top: -99px;
+    z-index: 3;
+    width: 150;
+    height: 150;
+    -webkit-user-select: none;
+    user-select: none;
+    background: transparent;
+    transition: transform .4s;
+}
+
+.gopher-proximity:hover {
+    transform: scale(1.5);
+}
+
+.gopher-proximity:hover~.gopher {
+    transform: translateY(30px);
+}
+
+/* CSS for hiding gopher element at specific screen width */
+@media screen and (max-width: 768px) {
+    .gopher {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .gopher {
+        top: -43px !important;
+        animation: none !important;
+    }
+}
+
+#eyes,
+#eyes img {
+    position: absolute;
+}
