@@ -18,27 +18,25 @@
 </head>
 
 <body>
+  <div class="container col-md-3 position-absolute" style='right: 0; left: 0; top: 30px;'>
+    <?php
+    if (isset($_GET['session_expired'])) {
+      echo "<div id='alert' class='alert alert-warning text-center'>Session expired. Login again!</div>";
+      echo "<script>setTimeout(function() { document.getElementById('alert').style.display = 'none'; }, 3000);</script>";
+    } else if (isset($_GET['auth_logout'])) {
+      echo "<div id='alert' class='alert alert-info text-center'>You've been logged out</div>";
+      echo "<script>setTimeout(function() { document.getElementById('alert').style.display = 'none'; }, 3000);</script>";
+    } else {
+      echo '<div id="alert" class="alert text-center"></div>';
+    }
+
+    ?>
+  </div>
+
   <div class="container">
     <div class="d-flex justify-content-start align-items-center" style="height: 100vh;">
       <div class="position-relative col-md-6 text-center m-0">
-        <h1 class="position-absolute" style="right: 0; left: 0; top: -100px;">Welcome to Opticians</h1>
-        <h1>LOGIN</h1>
-
-        <?php
-        if (isset($_GET['session_expired'])) {
-          echo "<div id='alert' class='alert alert-warning'>Session expired. Login again!</div>";
-          echo "<script>setTimeout(function() { document.getElementById('alert').style.display = 'none'; }, 3000);</script>";
-        } else if (isset($_GET['auth_logout'])) {
-          echo "<div id='alert' class='alert alert-info'>You've been logged out</div>";
-          echo "<script>setTimeout(function() { document.getElementById('alert').style.display = 'none'; }, 3000);</script>";
-        } else {
-          echo '<div id="alert" class="alert" style="display: none;"></div>';
-        }
-
-        ?>
-
-
-
+        <h1 class="position-absolute" style="right: 0; left: 0; top: -100px;">Welcome to OPTICIANS</h1>
         <form id="loginForm">
           <input type="text" id="uname" class="form-control mb-3" placeholder="Username" name="uname" required>
           <input type="password" id="pwd" class="form-control mb-3" placeholder="Password" name="pwd" required>
@@ -72,7 +70,7 @@
             window.location.href = 'home.php';
           } else {
             alertDiv.textContent = data.message;
-            alertDiv.className = 'alert alert-danger';
+            alertDiv.className = 'alert alert-danger text-center';
             alertDiv.style.display = 'block';
             setTimeout(() => {
               alertDiv.style.display = 'none';
