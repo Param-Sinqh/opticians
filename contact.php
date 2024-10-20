@@ -74,8 +74,7 @@ if ($_SESSION['auth'] != 1) {
 				<p>Phone: <a href="tel:+919464879699">+91 94648-79699</a></p>
 				<br>
 				<h5>Follow Us</h5>
-				<a class="social-btn" href="https://wa.me/+919464879699."><img src="assets/icons/whatsapp.svg"
-						alt="whatsapp"></a>
+				<a class="social-btn" href="https://wa.me/+919464879699."><img src="assets/icons/whatsapp.svg" alt="whatsapp"></a>
 				<a class="social-btn" href="https://linkedin.com/company/erasoftindia">
 					<img src="assets/icons/linkedin.svg" alt="linkedin">
 				</a>

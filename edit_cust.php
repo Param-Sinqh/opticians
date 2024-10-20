@@ -44,28 +44,23 @@ if ($_SESSION['auth'] != 1) {
 
 						<div class="form-group">
 							<label for="cname">Customer Name</label>
-							<input type="text" class="form-control" id="cname" name="cname"
-								placeholder="Enter Customer Name" value="<?php echo $row['cname']; ?>" required>
+							<input type="text" class="form-control" id="cname" name="cname" placeholder="Enter Customer Name" value="<?php echo $row['cname']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
-								value="<?php echo $row['email']; ?>">
+							<input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" value="<?php echo $row['email']; ?>">
 						</div>
 						<div class="form-group">
 							<label for="phone">Phone</label>
-							<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number"
-								value="<?php echo $row['phone']; ?>" required>
+							<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" value="<?php echo $row['phone']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label for="pin">Pin Code</label>
-							<input type="text" class="form-control" id="pin" name="pin" placeholder="Enter Pin Code"
-								value="<?php echo $row['pin']; ?>" />
+							<input type="text" class="form-control" id="pin" name="pin" placeholder="Enter Pin Code" value="<?php echo $row['pin']; ?>" />
 						</div>
 						<div class="form-group">
 							<label for="address">Address</label>
-							<textarea class="form-control" id="address" name="address" rows="3"
-								placeholder="Enter Address"><?php echo $row['address']; ?></textarea>
+							<textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter Address"><?php echo $row['address']; ?></textarea>
 						</div>
 					</div>
 				</div>
@@ -88,48 +83,30 @@ if ($_SESSION['auth'] != 1) {
 							<tbody>
 								<tr>
 									<td data-label="Right (OD)">Right (OD)</td>
-									<td data-label="Sph"><input type="text" name="dv_right_sph"
-											value="<?php echo $row['dv_right_sph']; ?>" class="form-control"></td>
-									<td data-label="Cyl"><input type="text" name="dv_right_cyl"
-											value="<?php echo $row['dv_right_cyl']; ?>" class="form-control"></td>
-									<td data-label="Axis"><input type="text" name="dv_right_axis"
-											value="<?php echo $row['dv_right_axis']; ?>" class="form-control"></td>
-									<td data-label="Prism"><input type="text" name="dv_right_prism"
-											value="<?php echo ($row['dv_right_prism'] == null) ? '-' : $row['dv_right_prism']; ?>"
-											class="form-control"></td>
-									<td data-label="Add"><input type="text" name="dv_right_add"
-											value="<?php echo ($row['dv_right_add'] == null) ? '-' : $row['dv_right_add']; ?>"
-											class="form-control"></td>
+									<td data-label="Sph"><input type="text" name="dv_right_sph" value="<?php echo $row['dv_right_sph']; ?>" class="form-control"></td>
+									<td data-label="Cyl"><input type="text" name="dv_right_cyl" value="<?php echo $row['dv_right_cyl']; ?>" class="form-control"></td>
+									<td data-label="Axis"><input type="text" name="dv_right_axis" value="<?php echo $row['dv_right_axis']; ?>" class="form-control"></td>
+									<td data-label="Prism"><input type="text" name="dv_right_prism" value="<?php echo ($row['dv_right_prism'] == null) ? '-' : $row['dv_right_prism']; ?>" class="form-control"></td>
+									<td data-label="Add"><input type="text" name="dv_right_add" value="<?php echo ($row['dv_right_add'] == null) ? '-' : $row['dv_right_add']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="Left (OS)">Left (OS)</td>
-									<td data-label="Sph"><input type="text" name="dv_left_sph"
-											value="<?php echo $row['dv_left_sph']; ?>" class="form-control"></td>
-									<td data-label="Cyl"><input type="text" name="dv_left_cyl"
-											value="<?php echo $row['dv_left_cyl']; ?>" class="form-control"></td>
-									<td data-label="Axis"><input type="text" name="dv_left_axis"
-											value="<?php echo $row['dv_left_axis']; ?>" class="form-control"></td>
-									<td data-label="Prism"><input type="text" name="dv_left_prism"
-											value="<?php echo ($row['dv_left_prism'] == null) ? '-' : $row['dv_left_prism']; ?>"
-											class="form-control"></td>
-									<td data-label="Add"><input type="text" name="dv_left_add"
-											value="<?php echo ($row['dv_left_add'] == null) ? '-' : $row['dv_left_add']; ?>"
-											class="form-control"></td>
+									<td data-label="Sph"><input type="text" name="dv_left_sph" value="<?php echo $row['dv_left_sph']; ?>" class="form-control"></td>
+									<td data-label="Cyl"><input type="text" name="dv_left_cyl" value="<?php echo $row['dv_left_cyl']; ?>" class="form-control"></td>
+									<td data-label="Axis"><input type="text" name="dv_left_axis" value="<?php echo $row['dv_left_axis']; ?>" class="form-control"></td>
+									<td data-label="Prism"><input type="text" name="dv_left_prism" value="<?php echo ($row['dv_left_prism'] == null) ? '-' : $row['dv_left_prism']; ?>" class="form-control"></td>
+									<td data-label="Add"><input type="text" name="dv_left_add" value="<?php echo ($row['dv_left_add'] == null) ? '-' : $row['dv_left_add']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="VA">Visual acuity (VA)</td>
-									<td colspan="5"><input type="text" name="dv_va"
-											value="<?php echo ($row['dv_va'] == null) ? '-' : $row['dv_va']; ?>"
-											class="form-control"></td>
+									<td colspan="5"><input type="text" name="dv_va" value="<?php echo ($row['dv_va'] == null) ? '-' : $row['dv_va']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="PD">Pupil Distance (PD)</td>
-									<td colspan="5"><input type="text" name="dv_pd"
-											value="<?php echo ($row['dv_pd'] == null) ? '-' : $row['dv_pd']; ?>"
-											class="form-control"></td>
+									<td colspan="5"><input type="text" name="dv_pd" value="<?php echo ($row['dv_pd'] == null) ? '-' : $row['dv_pd']; ?>" class="form-control"></td>
 								</tr>
 							</tbody>
 
@@ -152,48 +129,30 @@ if ($_SESSION['auth'] != 1) {
 							<tbody>
 								<tr>
 									<td data-label="Right (OD)">Right (OD)</td>
-									<td data-label="Sph"><input type="text" name="nv_right_sph"
-											value="<?php echo $row['nv_right_sph']; ?>" class="form-control"></td>
-									<td data-label="Cyl"><input type="text" name="nv_right_cyl"
-											value="<?php echo $row['nv_right_cyl']; ?>" class="form-control"></td>
-									<td data-label="Axis"><input type="text" name="nv_right_axis"
-											value="<?php echo $row['nv_right_axis']; ?>" class="form-control"></td>
-									<td data-label="Prism"><input type="text" name="nv_right_prism"
-											value="<?php echo ($row['nv_right_prism'] == null) ? '-' : $row['nv_right_prism']; ?>"
-											class="form-control"></td>
-									<td data-label="Add"><input type="text" name="nv_right_add"
-											value="<?php echo ($row['nv_right_add'] == null) ? '-' : $row['nv_right_add']; ?>"
-											class="form-control"></td>
+									<td data-label="Sph"><input type="text" name="nv_right_sph" value="<?php echo $row['nv_right_sph']; ?>" class="form-control"></td>
+									<td data-label="Cyl"><input type="text" name="nv_right_cyl" value="<?php echo $row['nv_right_cyl']; ?>" class="form-control"></td>
+									<td data-label="Axis"><input type="text" name="nv_right_axis" value="<?php echo $row['nv_right_axis']; ?>" class="form-control"></td>
+									<td data-label="Prism"><input type="text" name="nv_right_prism" value="<?php echo ($row['nv_right_prism'] == null) ? '-' : $row['nv_right_prism']; ?>" class="form-control"></td>
+									<td data-label="Add"><input type="text" name="nv_right_add" value="<?php echo ($row['nv_right_add'] == null) ? '-' : $row['nv_right_add']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="Left (OS)">Left (OS)</td>
-									<td data-label="Sph"><input type="text" name="nv_left_sph"
-											value="<?php echo $row['nv_left_sph']; ?>" class="form-control"></td>
-									<td data-label="Cyl"><input type="text" name="nv_left_cyl"
-											value="<?php echo $row['nv_left_cyl']; ?>" class="form-control"></td>
-									<td data-label="Axis"><input type="text" name="nv_left_axis"
-											value="<?php echo $row['nv_left_axis']; ?>" class="form-control"></td>
-									<td data-label="Prism"><input type="text" name="nv_left_prism"
-											value="<?php echo ($row['nv_left_prism'] == null) ? '-' : $row['nv_left_prism']; ?>"
-											class="form-control"></td>
-									<td data-label="Add"><input type="text" name="nv_left_add"
-											value="<?php echo ($row['nv_left_add'] == null) ? '-' : $row['nv_left_add']; ?>"
-											class="form-control"></td>
+									<td data-label="Sph"><input type="text" name="nv_left_sph" value="<?php echo $row['nv_left_sph']; ?>" class="form-control"></td>
+									<td data-label="Cyl"><input type="text" name="nv_left_cyl" value="<?php echo $row['nv_left_cyl']; ?>" class="form-control"></td>
+									<td data-label="Axis"><input type="text" name="nv_left_axis" value="<?php echo $row['nv_left_axis']; ?>" class="form-control"></td>
+									<td data-label="Prism"><input type="text" name="nv_left_prism" value="<?php echo ($row['nv_left_prism'] == null) ? '-' : $row['nv_left_prism']; ?>" class="form-control"></td>
+									<td data-label="Add"><input type="text" name="nv_left_add" value="<?php echo ($row['nv_left_add'] == null) ? '-' : $row['nv_left_add']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="VA">Visual acuity (VA)</td>
-									<td colspan="5"><input type="text" name="nv_va"
-											value="<?php echo ($row['nv_va'] == null) ? '-' : $row['nv_va']; ?>"
-											class="form-control"></td>
+									<td colspan="5"><input type="text" name="nv_va" value="<?php echo ($row['nv_va'] == null) ? '-' : $row['nv_va']; ?>" class="form-control"></td>
 								</tr>
 
 								<tr>
 									<td data-label="PD">Pupil Distance (PD)</td>
-									<td colspan="5"><input type="text" name="nv_pd"
-											value="<?php echo ($row['nv_pd'] == null) ? '-' : $row['nv_pd']; ?>"
-											class="form-control"></td>
+									<td colspan="5"><input type="text" name="nv_pd" value="<?php echo ($row['nv_pd'] == null) ? '-' : $row['nv_pd']; ?>" class="form-control"></td>
 								</tr>
 							</tbody>
 
@@ -204,15 +163,12 @@ if ($_SESSION['auth'] != 1) {
 						<table id="tbv" class="table">
 							<tr>
 								<td data-label="BC">Base Curve (BC)</td>
-								<td><input type="text" name="bc"
-										value="<?php echo ($row['bc'] == null) ? '-' : $row['bc']; ?>" class="form-control">
+								<td><input type="text" name="bc" value="<?php echo ($row['bc'] == null) ? '-' : $row['bc']; ?>" class="form-control">
 								</td>
 							</tr>
 							<tr>
 								<td data-label="DIA">Diameter (DIA)</td>
-								<td><input type="text" name="dia"
-										value="<?php echo ($row['dia'] == null) ? '-' : $row['dia']; ?>"
-										class="form-control"></td>
+								<td><input type="text" name="dia" value="<?php echo ($row['dia'] == null) ? '-' : $row['dia']; ?>" class="form-control"></td>
 							</tr>
 						</table>
 						<br><br>

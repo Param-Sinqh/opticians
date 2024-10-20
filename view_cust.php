@@ -19,6 +19,9 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="stylesheet" href="assets/css/gopher.css">
 	<link rel="stylesheet" href="assets/css/responsive_table.css">
 
+	<!--=============== Remixicon.css ===============-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+
 </head>
 
 <body>
@@ -51,12 +54,11 @@ if ($_SESSION['auth'] != 1) {
 						<?php echo $row['cname']; ?>
 					</h1>
 					<br />
-					<?php echo $row['address']; ?>
-					<?php echo "| pin - " . $row['pin']; ?>
+					<span class="ri-home-fill"> </span><?php echo $row['address'] . (empty($row['pin']) ? "" : " | pin - " . $row['pin']); ?>
 					<br />
-					<?php echo $row['email']; ?>
+					<span class="ri-mail-fill"> </span><a class="badge badge-pill badge-info" href="mailto:<?php echo $row['email']; ?>"><?php echo $row['email']; ?></a>
 					<br />
-					<?php echo $row['phone']; ?>
+					<span class="ri-phone-fill"> </span><a class="badge badge-pill badge-success" href="tel:<?php echo $row['phone']; ?>"><?php echo $row['phone']; ?></a>
 					<br />
 
 				</div>
@@ -68,10 +70,8 @@ if ($_SESSION['auth'] != 1) {
 				<div class="gopher" style="transform: scale(0.55); transform-origin: top left;">
 					<img id="anchor" src="assets/Gopher_eye_follow/gopher.png" alt="gopher">
 					<div id="eyes">
-						<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye"
-							style="top: -47px; left: -12px; ">
-						<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye"
-							style="top: -39px; left: -62px; ">
+						<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye" style="top: -47px; left: -12px; ">
+						<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye" style="top: -39px; left: -62px; ">
 					</div>
 				</div>
 				<!--------------------------------------------------------------------------->
@@ -86,8 +86,7 @@ if ($_SESSION['auth'] != 1) {
 							<button id="saveButton" class="btn save" style="display: none"></button>
 						</div>
 						<div>
-							<button id="deleteButton" class="btn delete"
-								onclick="if(confirm('Are you sure you want to delete?')){window.location.href = 'backend/del_cust.php?cust_id=<?php echo $cust_id; ?>';}"></button>
+							<button id="deleteButton" class="btn delete" onclick="if(confirm('Are you sure you want to delete?')){window.location.href = 'backend/del_cust.php?cust_id=<?php echo $cust_id; ?>';}"></button>
 							<button id="cancelButton" class="btn cancel" style="display: none"></button>
 						</div>
 					</div>

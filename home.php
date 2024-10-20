@@ -48,18 +48,15 @@ if ($_SESSION['auth'] != 1) {
 		<div class="gopher" style="transform: scale(0.55); transform-origin: top left;">
 			<img id="anchor" src="assets/Gopher_eye_follow/gopher.png" alt="gopher">
 			<div id="eyes">
-				<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye"
-					style="top: -47px; left: -12px; ">
-				<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye"
-					style="top: -39px; left: -62px; ">
+				<img id="eye_L" class="eye" src="assets/Gopher_eye_follow/eye_L.svg" alt="eye" style="top: -47px; left: -12px; ">
+				<img id="eye_R" class="eye" src="assets/Gopher_eye_follow/eye_R.svg" alt="eye" style="top: -39px; left: -62px; ">
 			</div>
 		</div>
 		<!--------------------------------------------------------------------------->
 
 		<div class="d-flex justify-content-center align-items-center">
 			<div class="col-md-12 lf m-0">
-				<input type="search" class="form-control" placeholder="Search by Name, Address, OR Phone" name="sw"
-					id="searchInput" autocomplete="off">
+				<input type="search" class="form-control" placeholder="Search by Name, Address, OR Phone" name="sw" id="searchInput" autocomplete="off">
 				<div id="searchResults" class="text-center" style="overflow-y: overlay; max-height: 45dvh;">
 					<!-- This will be updated dynamically with search results -->
 				</div>

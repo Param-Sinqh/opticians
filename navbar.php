@@ -5,8 +5,7 @@
                 <?php echo $_SESSION['cn']; ?>
             </span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -16,8 +15,7 @@
                 <li class="nav-item"><a class="nav-link" href="nc.php">New Customer</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="backend/logout.php"
-                        onclick="return confirm('Are you sure you want to logout?');">Logout</a>
+                    <a class="nav-link" href="backend/logout.php" onclick="return confirm('Are you sure you want to logout?');">Logout</a>
                 </li>
             </ul>
         </div>
