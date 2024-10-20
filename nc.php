@@ -14,6 +14,7 @@ if ($_SESSION['auth'] != 1) {
 	<link rel="icon" type="image/x-icon" href="assets/icons/opticians.ico">
 	<link rel="stylesheet" href="assets/css/global.css">
 	<link rel="stylesheet" href="assets/css/responsive_table.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css"> -->
 
 </head>
 
@@ -32,28 +33,24 @@ if ($_SESSION['auth'] != 1) {
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="cname">Customer Name</label>
-								<input type="text" class="form-control" id="cname" name="cname"
-									placeholder="Enter Customer Name" required>
+								<input type="text" class="form-control" id="cname" name="cname" placeholder="Enter Customer Name" required>
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email" name="email"
-									placeholder="Enter Email">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
 							</div>
 							<div class="form-group">
 								<label for="phone">Phone</label>
-								<input type="tel" class="form-control" id="phone" name="phone"
-									placeholder="Enter Phone Number" required>
+								<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" required>
+								<!-- <p id="phone_message" style="display: none;"></p> -->
 							</div>
 							<div class="form-group">
 								<label for="pin">Pin Code</label>
-								<input type="text" class="form-control" id="pin" name="pin"
-									placeholder="Enter Pin Code" />
+								<input type="text" class="form-control" id="pin" name="pin" placeholder="Enter Pin Code" />
 							</div>
 							<div class="form-group">
 								<label for="address">Address</label>
-								<textarea class="form-control" id="address" name="address" rows="3"
-									placeholder="Enter Address"></textarea>
+								<textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter Address"></textarea>
 							</div>
 						</div>
 					</div>
@@ -86,8 +83,7 @@ if ($_SESSION['auth'] != 1) {
 									</td>
 									<td data-label="Axis"><input type="text" name="dv_right_axis" class="form-control">
 									</td>
-									<td data-label="Prism"><input type="text" name="dv_right_prism"
-											class="form-control">
+									<td data-label="Prism"><input type="text" name="dv_right_prism" class="form-control">
 									</td>
 									<td data-label="Add"><input type="text" name="dv_right_add" class="form-control">
 									</td>
@@ -147,8 +143,7 @@ if ($_SESSION['auth'] != 1) {
 									</td>
 									<td data-label="Axis"><input type="text" name="nv_right_axis" class="form-control">
 									</td>
-									<td data-label="Prism"><input type="text" name="nv_right_prism"
-											class="form-control">
+									<td data-label="Prism"><input type="text" name="nv_right_prism" class="form-control">
 									</td>
 									<td data-label="Add"><input type="text" name="nv_right_add" class="form-control">
 									</td>
@@ -241,11 +236,8 @@ if ($_SESSION['auth'] != 1) {
 								<td data-label="Phone">
 									<?php echo $row['phone']; ?>
 								</td>
-								<td data-label="Edit"><a href="edit_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img
-											src="assets/icons/Edit_Square_stroke.svg" /></a></td>
-								<td data-label="Delete"><a onclick="return confirm('Are you sure you want to delete?'); "
-										href="backend/del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img
-											src="assets/icons/Delete_stroke.svg" /></a></td>
+								<td data-label="Edit"><a href="edit_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img src="assets/icons/Edit_Square_stroke.svg" /></a></td>
+								<td data-label="Delete"><a onclick="return confirm('Are you sure you want to delete?'); " href="backend/del_cust.php?cust_id=<?php echo $row['cust_id']; ?>"><img src="assets/icons/Delete_stroke.svg" /></a></td>
 							</tr>
 							<?php
 						}
@@ -263,6 +255,83 @@ if ($_SESSION['auth'] != 1) {
 
 	<script src="assets/vender/jquery-3.7.1.slim.min.js"></script>
 	<script src="assets/vender/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+
+	<!-- 	
+	<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+
+	<script>
+		// get the country data from the plugin
+		const countryData = window.intlTelInput.getCountryData();
+		const input_phone = document.querySelector("#phone");
+		const addressDropdown = document.querySelector("#address-country");
+
+		const form = document.querySelector("form");
+		const message = document.querySelector("#phone_message");
+
+		// populate the country dropdown
+		for (let i = 0; i < countryData.length; i++) {
+			const country = countryData[i];
+			const optionNode = document.createElement("option");
+			optionNode.value = country.iso2;
+			const textNode = document.createTextNode(country.name);
+			optionNode.appendChild(textNode);
+			addressDropdown.appendChild(optionNode);
+		}
+
+		// init plugin
+		const iti = window.intlTelInput(input_phone, {
+			initialCountry: "in",
+			// geoIpLookup: function (success, failure) {
+			// 	fetch("https://ipinfo.io", { headers: { 'Accept': 'application/json' } })
+			// 		.then(response => response.json())
+			// 		.then(data => success(data.country))
+			// 		.catch(failure);
+			// },
+			hiddenInput: () => ({ phone: "full_phone", country: "country_code" }),
+			loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js" // just for formatting/placeholders etc
+		});
+
+		// set address dropdown's initial value
+		addressDropdown.value = iti.getSelectedCountryData().iso2;
+
+		// listen to the telephone input for changes
+		input_phone.addEventListener('countrychange', () => {
+			addressDropdown.value = iti.getSelectedCountryData().iso2;
+		});
+
+		// listen to the address dropdown for changes
+		addressDropdown.addEventListener('change', () => {
+			iti.setCountry(addressDropdown.value);
+		});
+
+
+		// Listen for form submission
+		form.addEventListener('submit', function (event) {
+			event.preventDefault(); // Prevent form submission
+			reset();
+			
+			if (!iti.isValidNumber()) {
+				message.style.display = 'block';
+				message.innerHTML = "Invalid phone number!";
+				message.style.color = "red";
+				input_phone.focus();
+			}
+			console.log(this);
+
+			// Optionally, if you want to proceed with form submission if valid, uncomment this:
+			// if (isValid) {
+			//   form.submit();
+			// }
+		});
+
+		const reset = () => {
+			message.style.display = 'none';
+		};
+
+		input_phone.addEventListener('change', reset);
+		input_phone.addEventListener('keyup', reset);
+
+	</script> -->
 
 </body>
 
