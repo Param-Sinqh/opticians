@@ -4,6 +4,8 @@ include("../config/confile.php");
 
 $uname = $con->real_escape_string($_POST['uname']);
 $pwd = $con->real_escape_string($_POST['pwd']);
+$un = strtolower($uname);
+$pw = strtolower($pwd);
 
 $_SESSION['auth'] = 0;
 $sql = "SELECT * FROM busers WHERE un='$uname' AND pw='$pwd'";
@@ -13,13 +15,13 @@ $response = [];
 
 if ($res->num_rows == 1) {
     $row = $res->fetch_assoc();
-    $_SESSION['uname'] = $uname;
+    $_SESSION['uname'] = $row['un'];
     $_SESSION['id'] = $row['id'];
     $_SESSION['cn'] = $row['comp_name'];
     $_SESSION['tb_cust'] = "cust_" . $row['id'];
     $_SESSION['auth'] = 1;
 
-    if ($uname == 'admin') {
+    if ($row['id'] == 1) {
         $response['status'] = 'admin';
     } else {
         $response['status'] = 'user';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2024 at 06:53 PM
+-- Generation Time: Oct 21, 2024 at 10:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,8 +43,7 @@ CREATE TABLE `busers` (
 
 INSERT INTO `busers` (`id`, `comp_name`, `email`, `phone`, `address`, `un`, `pw`) VALUES
 (1, 'Administrator', NULL, NULL, NULL, 'admin', 'gracious'),
-(2, 'Preet Opticians', NULL, NULL, NULL, 'preet', 'p123'),
-(3, 'Laxmi Opticals', NULL, NULL, NULL, 'laxmi', 'lx123');
+(2, 'Preet Opticians', NULL, NULL, NULL, 'preet', 'p123');
 
 -- --------------------------------------------------------
 
@@ -108,49 +107,6 @@ INSERT INTO `cust_2` (`cust_id`, `cname`, `email`, `address`, `pin`, `phone`, `d
 (13, 'Daniel Rodriguez', 'daniel.rodriguez@example.com', '593 Apple St', '1593', '555-1593', '2024-10-19 01:30:39', '2024-10-19 01:30:39', '+0.50', '-0.50', '60', '', '+1.50', '+0.25', '-0.75', '120', '', '+1.75', '20/20', '61', '+0.75', '-0.25', '105', '', '+1.50', '+0.25', '-0.50', '30', '', '+1.50', '20/20', '60', NULL, NULL),
 (14, 'Olivia Wilson', 'olivia.wilson@example.com', '426 Orange St', '7426', '555-7426', '2024-10-19 01:30:39', '2024-10-19 01:30:39', '+1.25', '-1.00', '45', '', '+2.25', '+1.00', '-1.50', '135', '', '+2.50', '20/20', '62', '+1.50', '-0.75', '90', '', '+2.00', '+1.25', '-1.25', '105', '', '+2.00', '20/20', '63', NULL, NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `cust_3`
---
-
-CREATE TABLE `cust_3` (
-  `cust_id` int(11) NOT NULL,
-  `cname` varchar(200) NOT NULL DEFAULT '',
-  `email` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `pin` varchar(20) NOT NULL,
-  `phone` varchar(30) NOT NULL,
-  `date_added` datetime DEFAULT current_timestamp(),
-  `date_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `dv_right_sph` varchar(10) NOT NULL,
-  `dv_right_cyl` varchar(10) NOT NULL,
-  `dv_right_axis` varchar(10) NOT NULL,
-  `dv_right_prism` varchar(10) DEFAULT NULL,
-  `dv_right_add` varchar(10) DEFAULT NULL,
-  `dv_left_sph` varchar(10) NOT NULL,
-  `dv_left_cyl` varchar(10) NOT NULL,
-  `dv_left_axis` varchar(10) NOT NULL,
-  `dv_left_prism` varchar(10) DEFAULT NULL,
-  `dv_left_add` varchar(10) DEFAULT NULL,
-  `dv_va` varchar(10) NOT NULL,
-  `dv_pd` varchar(10) DEFAULT NULL,
-  `nv_right_sph` varchar(10) NOT NULL,
-  `nv_right_cyl` varchar(10) NOT NULL,
-  `nv_right_axis` varchar(10) NOT NULL,
-  `nv_right_prism` varchar(10) DEFAULT NULL,
-  `nv_right_add` varchar(10) DEFAULT NULL,
-  `nv_left_sph` varchar(10) NOT NULL,
-  `nv_left_cyl` varchar(10) NOT NULL,
-  `nv_left_axis` varchar(10) NOT NULL,
-  `nv_left_prism` varchar(10) DEFAULT NULL,
-  `nv_left_add` varchar(10) DEFAULT NULL,
-  `nv_va` varchar(10) NOT NULL,
-  `nv_pd` varchar(10) DEFAULT NULL,
-  `bc` varchar(10) DEFAULT NULL,
-  `dia` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -168,12 +124,6 @@ ALTER TABLE `cust_2`
   ADD PRIMARY KEY (`cust_id`);
 
 --
--- Indexes for table `cust_3`
---
-ALTER TABLE `cust_3`
-  ADD PRIMARY KEY (`cust_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -181,19 +131,13 @@ ALTER TABLE `cust_3`
 -- AUTO_INCREMENT for table `busers`
 --
 ALTER TABLE `busers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cust_2`
 --
 ALTER TABLE `cust_2`
   MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `cust_3`
---
-ALTER TABLE `cust_3`
-  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

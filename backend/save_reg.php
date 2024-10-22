@@ -11,6 +11,8 @@ $phone = $con->real_escape_string($_POST['phone']);
 $address = $con->real_escape_string($_POST['address']);
 $un = $con->real_escape_string($_POST['un']);
 $pw = $con->real_escape_string($_POST['pw']);
+$un = strtolower($un);
+$pw = strtolower($pw);
 
 $sql = "INSERT INTO busers(comp_name, email, phone, address, un, pw) values('$comp_name', '$email', '$phone', '$address', '$un', '$pw')";
 if ($con->query($sql) !== TRUE) {
