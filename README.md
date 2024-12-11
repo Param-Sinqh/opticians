@@ -33,7 +33,9 @@
 - Manage customer contact details and other key data needed for creating prescription eyewear.
 
 ### Design
+- A responsive design that works on all device sizes.
 - Built using **Bootstrap 4.6.2**, featuring a simple and visually appealing design.
+![Screenshot_2024-12-12-02-02-39-234_com android chrome](https://github.com/user-attachments/assets/1299da99-db50-46e1-a59b-e1d2a921304a)
 
 ## How to Run
 1. Clone the repository:
@@ -44,8 +46,8 @@
 3. Configure the database connection in `confile.php` under `config` folder.
 4. Host the project locally using XAMPP, WAMP, or any suitable server environment.
 5. Access the website through your browser at `http://localhost/opticians`.
-6. Example Business username and password is `param` and `p123` respectively.
-7. For Accessing admin dashboard both username and password is `admin`.
+6. The example business username and password are `param` and `p123`, respectively.
+7. To access the admin dashboard, both the username and password are `admin`.
 
 ## Screenshots
 ![Screenshot 2024-12-12 005114](https://github.com/user-attachments/assets/e8ada978-1af5-4ec6-8c1b-2fcf04b26359)
