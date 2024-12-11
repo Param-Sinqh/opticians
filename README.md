@@ -37,7 +37,7 @@
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/opticians.git
+   git clone https://github.com/Param-Sinqh/opticians.git
    ```
 2. Set up the database using the provided SQL file in the `db` folder.
 3. Configure the database connection in `confile.php`.
