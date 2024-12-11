@@ -18,6 +18,7 @@
 ### Dynamic Gopher Eye Element
 - A playful **baby pink gopher** animation where its eyes follow the cursor.
 - The gopher hides under the search bar when the cursor gets close, adding an engaging touch to the interface.
+<img src="https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485" width="50%" />
 ![gopher eye follow](https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485)
 
 ### Search Bar with Sorting Options
