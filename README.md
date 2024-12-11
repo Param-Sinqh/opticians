@@ -51,7 +51,7 @@
 
 ## Screenshots
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-  <img src="https://github.com/user-attachments/assets/e8ada978-1af5-4ec6-8c1b-2fcf04b26359" alt="Screenshot 2024-12-12 005114"/>
+  <img src="https://github.com/user-attachments/assets/494eee27-ccc8-4987-97cc-6b189f1416d1" alt="Screenshot 2024-12-12 005114"/>
   <img src="https://github.com/user-attachments/assets/6ba1bef8-5afa-488b-afd1-e092671a6f0e" alt="Screenshot 2024-12-12 010359"/>
   <img src="https://github.com/user-attachments/assets/5a981698-6860-4b61-b26e-672c807fedad" alt="Screenshot 2024-12-12 010858"/>
 </div>
