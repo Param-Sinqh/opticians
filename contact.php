@@ -69,13 +69,15 @@ if ($_SESSION['auth'] != 1) {
 			<div class="col-md-6">
 				<h5>Contact</h5>
 
-				<p>Website: <a class="badge badge-pill badge-light" href="https://erasoftindia.com">erasoftindia.com</a></p>
-				<p>Email: <a class="badge badge-pill badge-info" href="mailto:erasoftindiadev@gmail.com">erasoftindiadev@gmail.com</a></p>
-				<p>Phone: <a class="badge badge-pill badge-success" href="tel:+919464879699">+91 94648-79699</a></p>
+<!-- 				<p>Website: <a class="badge badge-pill badge-light" href="https://yourwebsite.com">yourwebsite.com</a></p> -->
+				<p>Email: <a class="badge badge-pill badge-info" href="mailto:paramdeepsingh@example.com">paramdeepsingh@example.com</a></p>
+				<p>Phone: <a class="badge badge-pill badge-success" href="tel:+910123456789">+91 01234-56789</a></p>
 				<br>
 				<h5>Follow Us</h5>
-				<a class="social-btn" href="https://wa.me/+919464879699"><img src="assets/icons/whatsapp.svg" alt="whatsapp"></a>
-				<a class="social-btn" href="https://linkedin.com/company/erasoftindia">
+				<a class="social-btn" href="https://wa.me/+910123456789">
+					<img src="assets/icons/whatsapp.svg" alt="whatsapp">
+				</a>
+				<a class="social-btn" href="https://www.linkedin.com/in/paramdeep-singh-32b7501a0/">
 					<img src="assets/icons/linkedin.svg" alt="linkedin">
 				</a>
 
