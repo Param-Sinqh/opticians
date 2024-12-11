@@ -18,8 +18,7 @@
 ### Dynamic Gopher Eye Element
 - A playful **baby pink gopher** animation where its eyes follow the cursor.
 - The gopher hides under the search bar when the cursor gets close, adding an engaging touch to the interface.
-<img src="https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485" width="50%" />
-![gopher eye follow](https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485)
+<img src="https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485" width="50%" alt="gopher eye follow" />
 
 ### Search Bar with Sorting Options
 - **Admin Dashboard**: Search for registered opticians with filtering and sorting options.
@@ -36,7 +35,7 @@
 ### Design
 - A responsive design that works on all device sizes.
 - Built using **Bootstrap 4.6.2**, featuring a simple and visually appealing design.
-![Screenshot_2024-12-12-02-02-39-234_com android chrome](https://github.com/user-attachments/assets/1299da99-db50-46e1-a59b-e1d2a921304a)
+- <img src="https://github.com/user-attachments/assets/1299da99-db50-46e1-a59b-e1d2a921304a" width="50%" alt="Screenshot_2024-12-12-02-02-39-234_com android chrome" />
 
 ## How to Run
 1. Clone the repository:
