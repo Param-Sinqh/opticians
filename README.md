@@ -40,9 +40,11 @@
    git clone https://github.com/Param-Sinqh/opticians.git
    ```
 2. Set up the database using the provided SQL file in the `db` folder.
-3. Configure the database connection in `confile.php`.
+3. Configure the database connection in `confile.php` under `config` folder.
 4. Host the project locally using XAMPP, WAMP, or any suitable server environment.
 5. Access the website through your browser at `http://localhost/opticians`.
+6. Example Business username and password is `param` and `p123` respectively.
+7. For Accessing admin dashboard both username and password is `admin`.
 
 ## Screenshots
 ![gopher eye follow](https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485)
