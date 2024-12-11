@@ -18,6 +18,7 @@
 ### Dynamic Gopher Eye Element
 - A playful **baby pink gopher** animation where its eyes follow the cursor.
 - The gopher hides under the search bar when the cursor gets close, adding an engaging touch to the interface.
+![gopher eye follow](https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485)
 
 ### Search Bar with Sorting Options
 - **Admin Dashboard**: Search for registered opticians with filtering and sorting options.
@@ -47,7 +48,6 @@
 7. For Accessing admin dashboard both username and password is `admin`.
 
 ## Screenshots
-![gopher eye follow](https://github.com/user-attachments/assets/c8453a7c-b01b-42dc-8b6c-a38aec7ce485)
 ![Screenshot 2024-12-12 005114](https://github.com/user-attachments/assets/e8ada978-1af5-4ec6-8c1b-2fcf04b26359)
 ![Screenshot 2024-12-12 010359](https://github.com/user-attachments/assets/6ba1bef8-5afa-488b-afd1-e092671a6f0e)
 ![Screenshot 2024-12-12 010858](https://github.com/user-attachments/assets/5a981698-6860-4b61-b26e-672c807fedad)
